@@ -1,0 +1,55 @@
+/**
+Frontend Navigation css
+**/
+
+nav{
+  background: #FFFFFF!important;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul , li , a{
+  list-style: none;
+  text-decoration: none;
+}
+
+ul{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+a{
+  font-size: 10pt;
+  color: #626D7B;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+a:hover{
+  color: #36cad1;
+}
+
+
+a i#dropIcon{
+  font-size: 20pt;
+  color: #6A7481;
+
+}
+
+#ulLeft{
+  justify-content:flex-start;
+}
+
+#ulLeft li{ margin-right: 20px;}
+#left-side , #right-side{
+  width: 50%;
+  height: auto;
+}
+
+#right-side{width: 20%;}
