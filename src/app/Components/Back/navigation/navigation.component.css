@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
+nav{
+  background: #FFFFFF!important;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+ul , li , a{
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+#left-side , #right-side{
+  width: 80%;
+  height: 100%;
+}
+
+
+div#left-side{
+  background: #36cad1;
+  width: 20%;
+}
+
+div#right-side{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+form#form{
+  width: 50%;
+  height: auto;
+}
+
+div.circle{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-image: url('https://vignette.wikia.nocookie.net/vsbattles/images/2/27/SSGSS_Goku.jpeg/revision/latest?cb%5Cx3d20151009132808');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+  margin-top: 10px;
+}
+
+h1#recursive{
+  font-family: 'Berkshire Swash', cursive;
+  color: #747D8A;
+  font-size: 15pt;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+
+input[type="search"] {
+  font-size: 13px;
+  color: #717B88;
+  width: 100%;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  padding: 10px 15px 10px 15px;
+  margin: 20px;
+  margin-top: 10px;
+}
+
+
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #626D7B;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #626D7B; color: white;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
+#downarrow , #name{
+  position: absolute;
+  left: 40px;
+  top: 20px;
+}

@@ -4,6 +4,10 @@
   font-family: 'Lato', sans-serif;
 }
 
+a , p , h1 , h2 , h3 , h4 , h6{
+  font-family: 'Lato', sans-serif;
+}
+
 body{
   box-sizing: border-box;
 

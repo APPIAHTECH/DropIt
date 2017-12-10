@@ -9,11 +9,17 @@ import { FooterComponent } from './Components/Front/footer/footer.component';
 import { LoginComponent } from './Components/Front/login/login.component';
 import { FrontComponent } from './Components/Front/front/front.component';
 import { SignupComponent } from './Components/Front/signup/signup.component';
+import { ResetComponent } from './Components/Front/reset/reset.component';
+import { DashboardComponent } from './Components/Back/dashboard/dashboard.component';
+import { NavigationComponent } from './Components/Back/navigation/navigation.component';
 
 const appRoutes: Routes = [
   { path: '', component: FrontComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
+  { path: 'reset/password', component: ResetComponent },
+
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
@@ -24,7 +30,10 @@ const appRoutes: Routes = [
     FooterComponent,
     LoginComponent,
     FrontComponent,
-    SignupComponent
+    SignupComponent,
+    ResetComponent,
+    DashboardComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
