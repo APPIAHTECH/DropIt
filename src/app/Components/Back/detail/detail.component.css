@@ -1,0 +1,394 @@
+section#detail{
+  width: 100%;
+  height: auto;
+  background: #F5F5F5;
+  padding: 20px;
+  padding-top: 0;
+  padding-bottom: 5em;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+
+#right-detail , #left-detail{
+  width: 50%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+#right-detail{
+  width: 40%;
+  height: 620px;
+  margin-left: 70px;
+}
+
+div.comments-box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+div.body-box{
+  width: 100%;
+  height: 80%;
+  padding: 10px;
+  background: #F4F4F4;
+  overflow-y: auto;
+  background: #DCDCDC;
+}
+
+.comment{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  border-bottom: solid .5px #F5F5F5;
+  padding-top: 20px;
+}
+#topside{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+#comentProfileImage{
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 50%;
+
+  background-image: url('https://vignette.wikia.nocookie.net/vsbattles/images/2/27/SSGSS_Goku.jpeg/revision/latest?cb%5Cx3d20151009132808');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#det{
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: -5px;
+  margin-left: 10px;
+}
+#name{
+  font-size: 10pt;
+  font-weight: bold;
+  color: #484848;
+}
+
+
+#time{
+  margin-left: 250px;
+  font-size: 8pt;
+  font-weight: lighter;
+  opacity: .8;
+  color: #484848;
+}
+
+#message{
+  padding: 40px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+  height: auto;
+  word-break: break-all;
+  color: #484848;
+  font-size: 10pt;
+}
+.movie-card {
+  font: 14px/22px "Lato", Arial, sans-serif;
+  color: #A9A8A3;
+  padding: 40px 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding-bottom: 10em;
+
+}
+
+.hero {
+  height: 342px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.hero:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: red;
+  background: url("https://i.imgur.com/Luw1p7cr.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  -webkit-transform: skewY(-2.2deg);
+          transform: skewY(-2.2deg);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-backface-visibility: hidden;
+}
+
+.cover {
+  position: absolute;
+  top: 160px;
+  left: 40px;
+  z-index: 2;
+}
+
+.details {
+  padding-top: 250px;
+  padding-left: 50px;
+}
+
+.details .title1 {
+  color: white;
+  font-size: 44px;
+  margin-bottom: 13px;
+  position: relative;
+}
+
+.details .title1 span {
+  position: absolute;
+  top: 3px;
+  margin-left: 12px;
+  background: #C4AF3D;
+  border-radius: 5px;
+  color: #544C21;
+  font-size: 14px;
+  padding: 0px 4px;
+}
+
+.details .title2 {
+  color: #C7C1BA;
+  font-size: 23px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.details .likes {
+  margin-left: 10px;
+}
+
+.details .likes:before {
+  position: relative;
+  top: 2px;
+  padding-right: 7px;
+}
+
+.description {
+  bottom: 0px;
+  height: 200px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #B1B0AC;
+}
+
+.column1 {
+  padding-left: 50px;
+  width: 220px;
+  float: left;
+  text-align: center;
+}
+
+.tag {
+  background: white;
+  border-radius: 10px;
+  padding: 3px 8px;
+  font-size: 14px;
+  margin-right: 4px;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background: #ddd;
+}
+
+.column2 {
+  padding-left: 41px;
+  padding-top: 30px;
+  margin-left: 20px;
+  width: 480px;
+  max-width: 480px;
+  word-break: break-all;
+  float: left;
+}
+
+.avatars {
+  margin-top: 23px;
+}
+
+.avatars img {
+  cursor: pointer;
+}
+
+.avatars img:hover {
+  opacity: 0.6;
+}
+
+.avatars a:hover {
+  text-decoration: none;
+}
+
+fieldset, label {
+  margin: 0;
+  padding: 0;
+}
+
+/****** Style Star Rating Widget *****/
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label:before {
+  margin: 5px;
+  margin-top: 0;
+  font-size: 1em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+
+/* hover previous stars in list */
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
+}
+
+a[data-tooltip] {
+  position: relative;
+}
+
+a[data-tooltip]::before,
+a[data-tooltip]::after {
+  position: absolute;
+  display: none;
+  opacity: 0.85;
+}
+
+a[data-tooltip]::before {
+  /*
+   * using data-tooltip instead of title so we
+   * don't have the real tooltip overlapping
+   */
+  content: attr(data-tooltip);
+  background: #000;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  /* we don't want the text to wrap */
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a[data-tooltip]::after {
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  content: '';
+}
+
+a[data-tooltip]:hover::before,
+a[data-tooltip]:hover::after {
+  display: block;
+}
+
+/** positioning **/
+/* top tooltip */
+a[data-tooltip][data-placement="top"]::before {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 40px;
+}
+
+a[data-tooltip][data-placement="top"]::after {
+  border-top-color: #000;
+  border-bottom: none;
+  bottom: 50px;
+  left: 20px;
+  margin-bottom: 4px;
+}
+
+
+input[type="submit"]{
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  padding: 12px 35px;
+  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  text-align: center;
+  background-color: #36cad1;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+input[type="submit"]:hover{background: #404040;}
+
+
+.add-comment{
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+input[type="text"]#add{
+  font-size: 13px;
+  color: #717B88;
+  width: 100%;
+  padding: 20px;
+  padding-left: 20px;
+  padding-right: 0;
+  border: solid white 0px;
+  border-bottom: 2px solid #676767;
+  padding-bottom: 5px;
+  outline: none;
+}

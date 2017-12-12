@@ -12,6 +12,7 @@ import { SignupComponent } from './Components/Front/signup/signup.component';
 import { ResetComponent } from './Components/Front/reset/reset.component';
 import { DashboardComponent } from './Components/Back/dashboard/dashboard.component';
 import { NavigationComponent } from './Components/Back/navigation/navigation.component';
+import { DetailComponent } from './Components/Back/detail/detail.component';
 
 const appRoutes: Routes = [
   { path: '', component: FrontComponent },
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'reset/password', component: ResetComponent },
 
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'project/detail/:id', component: DetailComponent },
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     SignupComponent,
     ResetComponent,
     DashboardComponent,
-    NavigationComponent
+    NavigationComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
