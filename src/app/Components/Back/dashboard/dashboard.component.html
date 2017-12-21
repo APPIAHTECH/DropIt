@@ -1,4 +1,26 @@
 <app-navigation></app-navigation>
+
+<div id="subNav">
+  <div class="dropdown">
+    <button class="dropbtn">Category <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+    <div class="dropdown-content">
+      <a href="#">Hip Hop</a>
+      <a href="#">Trap</a>
+      <a href="#">Rap</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Sort by <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+    <div class="dropdown-content">
+      <a href="#">Recent</a>
+      <a href="#">Most view</a>
+      <a href="#">Most Liked</a>
+      <a href="#">Most Commented</a>
+    </div>
+  </div>
+
+</div>
   <section id="dash">
     <div class="monsterCard" *ngFor="let cardItem of cards">
       <div class="monster card">
@@ -14,10 +36,11 @@
             </div>
             <ul class="menu-content">
               <li>
-                <a href="#" class="fa fa-cloud-download"><span>150</span></a>
+                <a class="fa fa-cloud-download"><span>150</span></a>
               </li>
-              <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
-              <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+              <li><a class="fa fa-heart-o"><span>18</span></a></li>
+              <li><a class="fa fa-comment-o"><span>3</span></a></li>
+              <li><a class="fa fa-headphones"><span>GH</span></a></li>
             </ul>
           </div>
           <div class="data">

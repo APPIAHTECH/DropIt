@@ -17,14 +17,30 @@ ul , li , a{
   text-align: center;
 }
 
+#upload{
+  padding-top: 20px;
+  margin-right: 35px;
+}
+
+#upload i{
+  margin-left: 20px;
+  font-size: 15pt;
+  color: #484848;
+}
 #left-side , #right-side{
   width: 80%;
   height: 100%;
 }
 
+#wagets{
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
 
 div#left-side{
-  background: #36cad1;
+  background: #F44336;
   width: 20%;
 }
 
@@ -40,8 +56,8 @@ form#form{
 }
 
 div.circle{
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-image: url('https://vignette.wikia.nocookie.net/vsbattles/images/2/27/SSGSS_Goku.jpeg/revision/latest?cb%5Cx3d20151009132808');
   background-position: center;
@@ -86,6 +102,7 @@ input[type="search"] {
 .dropdown-content {
     display: none;
     position: absolute;
+    left: -50px;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -99,7 +116,7 @@ input[type="search"] {
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #626D7B; color: white;}
+.dropdown-content a:hover {background-color: #484848; color: white;}
 
 .dropdown:hover .dropdown-content {
     display: block;
