@@ -9,6 +9,12 @@ nav{
   flex-flow: row wrap;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 5555;
+  position: inherit;
+  transition: all ease-in-out 1s;
+}
+
+.scrolling{
+  position: fixed !important;
 }
 
 ul , li , a{
@@ -40,7 +46,7 @@ ul , li , a{
 }
 
 div#left-side{
-  background: #F44336;
+  background: #484848;
   width: 20%;
 }
 
@@ -73,6 +79,7 @@ h1#recursive{
   font-size: 15pt;
   letter-spacing: 5px;
   font-weight: 700;
+
 }
 
 

@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  scrolling:boolean = false
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {window.onscroll = ()=> this.scrollFunction()}
+
+  scrollFunction(){
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+      this.scrolling = true
+    else
+      this.scrolling = false
   }
 
 }

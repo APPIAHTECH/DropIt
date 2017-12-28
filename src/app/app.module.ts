@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './Components/app.component';
 import { NavComponent } from './Components/Front/nav/nav.component';
@@ -13,6 +14,8 @@ import { ResetComponent } from './Components/Front/reset/reset.component';
 import { DashboardComponent } from './Components/Back/dashboard/dashboard.component';
 import { NavigationComponent } from './Components/Back/navigation/navigation.component';
 import { DetailComponent } from './Components/Back/detail/detail.component';
+import { ProfileComponent } from './Components/Back/profile/profile.component';
+import { UploadComponent } from './Components/Back/upload/upload.component';
 
 const appRoutes: Routes = [
   { path: '', component: FrontComponent },
@@ -21,7 +24,9 @@ const appRoutes: Routes = [
   { path: 'reset/password', component: ResetComponent },
 
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'upload', component: UploadComponent },
   { path: 'project/detail/:id', component: DetailComponent },
+  { path: 'user/my/profile', component: ProfileComponent }
 ];
 
 @NgModule({
@@ -36,10 +41,13 @@ const appRoutes: Routes = [
     ResetComponent,
     DashboardComponent,
     NavigationComponent,
-    DetailComponent
+    DetailComponent,
+    ProfileComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(
      appRoutes,
      { enableTracing: true } // <-- debugging purposes only

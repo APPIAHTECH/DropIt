@@ -1,4 +1,4 @@
-<nav>
+<nav id="navbar" [ngClass]="{'scrolling': scrolling}">
   <div id="left-side">
     <ul>
       <li><a href="/dashboard"><h1 id="recursive">Plus Ultra</h1></a></li>
@@ -13,7 +13,7 @@
 
     <div id="wagets">
       <div id="upload">
-        <a href="upload"><i class="fa fa-cloud-upload" aria-hidden="true"></i></a>
+        <a href="/upload"><i class="fa fa-cloud-upload" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-th" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
       </div>

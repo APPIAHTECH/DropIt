@@ -1,43 +1,87 @@
 <app-navigation></app-navigation>
   <section id="myProfile">
-    <div id="left">
-      <div class="container">
-         <header>
-             <div class="bio">
-               <img src="https://crazyanimereviews.files.wordpress.com/2014/06/1ed58-eren-titan-and-captain-levy-attack-on-titan-wide-wallpaper-hd.jpg" alt="background" class="bg">
-             </div>
-
-             <div class="avatarcontainer">
-                 <img src="https://vignette.wikia.nocookie.net/vsbattles/images/2/27/SSGSS_Goku.jpeg/revision/latest?cb%5Cx3d20151009132808" alt="avatar" class="avatar">
-             </div>
-         </header>
-
-         <div class="content">
-             <div class="data">
-                 <ul>
-                     <li>
-                         2,934
-                         <span>Projects</span>
-                     </li>
-                     <li>
-                         1,119
-                         <span>Followers</span>
-                     </li>
-                     <li>
-                         530
-                         <span>Following</span>
-                     </li>
-                 </ul>
-             </div>
-
-             <div class="follow"> <div class="icon-twitter"></div> Follow</div>
-         </div>
-
-     </div>
+    <div id="bg"></div>
+    <div id="suscript">
+      <div id="circleProfileBig">
+        <div id="info">
+          <h4>eunisae</h4>
+          <p id="projects">10254 projects <i class="fa fa-plus" aria-hidden="true"></i></p>
+        </div>
+      </div>
     </div>
+    <div id="select">
+      <ul id="options">
+        <li [ngClass]="{'active': isSelected(1)}" (click)="selectTab(1)" class="li"><a>Projects</a></li>
+        <li [ngClass]="{'active': isSelected(2)}" (click)="selectTab(2)" class="li"><a>Analitics</a></li>
+      </ul>
 
-    <div id="right">
-      
+
+      <div *ngIf="isSelected(1)" class="pro">
+
+        <div id="subNav">
+          <div class="dropdown">
+            <button class="dropbtn">Category <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+            <div class="dropdown-content">
+              <a href="#">Hip Hop</a>
+              <a href="#">Trap</a>
+              <a href="#">Rap</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn">Sort by <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+            <div class="dropdown-content">
+              <a href="#">Recent</a>
+              <a href="#">Most view</a>
+              <a href="#">Most Liked</a>
+              <a href="#">Most Commented</a>
+            </div>
+          </div>
+
+        </div>
+
+          <section id="dash">
+            <div class="monsterCard" *ngFor="let cardItem of cards">
+              <div class="monster card">
+                <div class="wrapper">
+                  <div class="header">
+                    <div class="date" id="date">
+
+                      <div id="minicircle"></div>
+                      <span class="author">Monstercat  </span>
+                    </div>
+                    <ul class="menu-content">
+                      <li>
+                        <a class="fa fa-cloud-download"><span>150</span></a>
+                      </li>
+                      <li><a class="fa fa-heart-o"><span>18</span></a></li>
+                      <li><a class="fa fa-comment-o"><span>3</span></a></li>
+                      <li><a class="fa fa-headphones"><span>GH</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="data">
+                    <div class="content">
+
+                      <h1 class="title"><a href="#">Against The Sun</a></h1>
+                      <p class="text">This a monstercat track flp build with fl studio , hope you enjoy it . :D</p>
+                      <a class="button btn-download">Download</a>
+                      <a class="button">Edit</a>
+                      <a class="button btn-delete">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+      </div>
+      <div *ngIf="isSelected(2)">
+        <section id="dash">
+          {{tab}} Analitics stuff!!
+        </section>
+      </div>
+
     </div>
   </section>
 <app-footer></app-footer>

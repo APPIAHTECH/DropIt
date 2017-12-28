@@ -1,0 +1,279 @@
+section{
+  width: 100%;
+  height: auto;
+  background: #FAFAFA;
+  padding: 20px;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+section h2{
+  text-align: center;
+  color: #747D8A;
+  font-size: 12pt;
+}
+
+
+#face{background: #03A9F4;}
+#google{background: #f44336;}
+.p{
+  word-break: break-all;
+  text-align: center;
+  color: #BFC3C9;
+}
+
+#already{
+  word-break: break-all;
+  text-align: justify;
+  color: #BFC3C9;
+  margin-left: 20px;
+  font-size: 9pt;
+}
+
+a{
+  font-size: 10pt;
+  color: #626D7B;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+a:hover{
+  color: #36cad1;
+}
+
+.form{
+  margin-top: 20px;
+  width: auto;
+  height: auto;
+}
+
+input[type="submit"]{
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  padding: 12px 35px;
+  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  text-align: center;
+  background-color: #36cad1;
+  box-shadow: none;
+  text-shadow: none;
+  margin-left: 20px;
+}
+
+button , .btn-disable{
+  display: inline-block;
+  width: 50%;
+  color: #fff;
+  font-size: 15px;
+  padding: 12px 35px;
+  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  text-align: center;
+  background-color: #36cad1;
+  box-shadow: none;
+  text-shadow: none;
+  margin-left: 20px;
+}
+.btn-disable{
+  transition: none;
+}
+
+input[type="email"], input[type="text"],
+input[type="password"], input[type="search"],
+textarea,select {
+    font-size: 13px;
+    color: #717B88;
+    width: 100%;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 10px 15px 10px 15px;
+    margin: 20px;
+}
+
+textarea{
+  height: 200px;
+  resize: none;
+}
+
+input[type="submit"]:hover{background: #404040;}
+
+div.social{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+label{
+  color: #747D8A;
+  padding-left: 25px;
+  font-size: 12pt;
+  text-align: center;
+}
+.disabled{
+    background: #282C34!important;
+}
+.disabled:hover{
+  cursor: inherit;
+  background: #282C34!important;
+}
+
+
+.set-size {
+  font-size: 10em;
+}
+.charts-container:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.pie-wrapper {
+  height: 1em;
+  width: 1em;
+  margin: auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+@keyframes round {
+  from {
+    border: 0em solid #3498db;
+  }
+   to {border: 0.1em solid #3498db;}
+
+}
+.pie-wrapper:nth-child(3n+1) {
+  clear: both;
+}
+.pie-wrapper .pie {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+
+}
+.pie-wrapper .pie .half-circle {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  background: transparent;
+
+}
+
+.anime{
+  animation-name: round;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transition: all  .5s;
+}
+.pie-wrapper .label {
+  background: #34495e;
+  border-radius: 50%;
+  bottom: 0.4em;
+  color: #ecf0f1;
+  cursor: default;
+  display: block;
+  font-size: 0.25em;
+  left: 0.4em;
+  line-height: 2.6em;
+  position: absolute;
+  right: 0.4em;
+  text-align: center;
+  top: 0.4em;
+}
+.pie-wrapper .label .smaller {
+  color: #bdc3c7;
+  font-size: .45em;
+  padding-bottom: 20px;
+  vertical-align: super;
+}
+.pie-wrapper .shadow {
+  height: 100%;
+  width: 100%;
+  border: 0.1em solid #bdc3c7;
+  border-radius: 50%;
+}
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label#chose{
+  background: #36CAD1;
+  padding: 12px 35px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.inputfile > label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+label + .inputfile:focus,
+label + .inputfile:hover {
+    background-color: red;
+}
+
+
+label + .inputfile {
+	cursor: pointer; /* "hand" cursor */
+}
+
+
+label + .inputfile * {
+	pointer-events: none;
+}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label + .no-js .inputfile {
+    display: none;
+}
+
+
+div#prev{
+  width: 900px;
+  height: 400px;
+  background: red;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background-position: center!important;
+  background-size: cover !important;
+}

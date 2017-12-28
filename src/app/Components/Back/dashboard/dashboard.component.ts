@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
     this.cards.push("Hola")
     this.cards.push("Hola")
     this.cards.push("Hola")
+
   }
 
 }

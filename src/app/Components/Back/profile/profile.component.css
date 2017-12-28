@@ -1,6 +1,101 @@
 section#myProfile{
   width: 100%;
   height: auto;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+ul#options{
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+ul#options li{
+  width: 150px;
+  margin-left: 140px;
+  transition: all ease-in-out .1s;
+  text-align: justify;
+}
+
+ul#options li:hover{
+  cursor: pointer;
+  color: #36cad1;
+}
+
+
+div#bg{
+  width: 100%;
+  height: 150px;
+  background: url('https://i.imgur.com/cKaoj9u.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+p#projects{
+  color: #626D7B;
+  font-size: 9pt;
+  font-weight: 400;
+  line-height: 2.1rem;
+  position: relative;
+  top: -12px;
+}
+
+div#suscript{
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #FAFAFA;
+}
+
+div#select{
+  width: 100%;
+  height: auto;
+  background: #FAFAFA;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-bottom: 5px solid #F44336;
+}
+
+
+#circleProfileBig{
+  width: 100px;
+  height: 100px;
+  background: url('https://vignette.wikia.nocookie.net/vsbattles/images/2/27/SSGSS_Goku.jpeg/revision/latest?cb%5Cx3d20151009132808');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  margin-left: 100px;
+}
+
+#info{
+  position: relative;
+  right: -150px;
+}
+#info h4{
+  position: relative;
+  top: 10px;
+}
+
+
+/*dash css*/
+section#dash{
+  width: 100%;
+  height: auto;
   background: #F5F5F5;
   padding: 20px;
   padding-bottom: 5em;
@@ -8,185 +103,278 @@ section#myProfile{
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  justify-content: center;
 }
 
-#left , #right{
-  width: 35%;
-  height: 100%;
+#subNav{
+  width: 100%;
+  height: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #484848;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
 }
-#right{
-  width: 65%;
-  height: 100%;
 
+section h2{
+  text-align: center;
+  color: #747D8A;
 }
-header {
-  display: block;
-  overflow: hidden;
+
+span{
+  color: #626D7B !important;
+}
+
+.p{
+  word-break: break-all;
+  text-align: center;
+  color: #BFC3C9;
+}
+
+.monsterCard{
+  width: 20%;
+  height: 20%;
+  margin: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  transition: all ease-in-out .8s;
+}
+
+
+#minicircle{
+  width: 20px;
+  height: 20px;
+  background: blue;
+  border-radius: 50%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-right: 5px;
+
+  background-image: url('https://vignette.wikia.nocookie.net/vsbattles/images/2/27/SSGSS_Goku.jpeg/revision/latest?cb%5Cx3d20151009132808');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+a{
+  font-size: 10pt;
+  color: #626D7B;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+a:hover{
+  color: #36cad1;
+}
+
+.card {
+  width: 100%;
+  height: 50%;
+}
+.card .menu-content {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.card .menu-content::before, .card .menu-content::after {
+  content: '';
+  display: table;
+}
+.card .menu-content::after {
+  clear: both;
+}
+.card .menu-content li {
+  display: inline-block;
+}
+.card .menu-content a {
+  color: #626D7B;
+}
+.card .menu-content span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  font-size: 10px;
+  font-weight: 700;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.card .wrapper {
+  background-color: #fff;
+  min-height: 300px;
   position: relative;
-  padding-bottom: 2em;
-  -moz-border-radius-topleft: 8px;
-  -webkit-border-top-left-radius: 8px;
-  border-top-left-radius: 8px;
-  -moz-border-radius-topright: 8px;
-  -webkit-border-top-right-radius: 8px;
-  border-top-right-radius: 8px;
+  overflow: hidden;
+}
+.card .wrapper:hover .data {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+          background: white;
+          color: #626D7B;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  background-color: #484848;
-}
-
-.bg {
-  border-bottom: 8px solid #F44336;
-  width: 100%;
-  height: 100%;
-}
-
-.bio:hover > .desc {
-  cursor: pointer;
-  opacity: 1; }
-
-.content{
-  width: 100%;
-  height: 100%;
-  padding-bottom: 1.5em;
-}
-.avatarcontainer {
+.card .wrapper:hover .wrapper{filter: brightness(60%);}
+.card .data {
   position: absolute;
   bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  width: 70px;
-  height: 70px;
-  display: block; }
-
-  .avatarcontainer:hover > .hover {
-    opacity: 1; }
-
-.avatar {
   width: 100%;
-  height: 100%;
-  border: 5px solid #F44336;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative; }
-  .avatar img {
-    width: 65px;
-    height: 65px; }
-  .avatar:hover + .hover {
-    opacity: 1;
-    cursor: pointer; }
-
-.hover {
-  position: absolute;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  background-color: #3498db;
-  top: 0;
-  font-size: 1.8em;
-  text-align: center;
-  color: white;
-  padding-top: 18%;
-  opacity: 0;
-  font-weight: 300;
-  border: 8px solid #5cc0ff;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease; }
-
-.data {
-  margin-top: .6em;
-  color: #81878b; }
-
-  .data li {
-    width: 32%;
-    text-align: center;
-    display: inline-block;
-    font-size: 1.5em;
-    font-family: 'Lato';
-    border-right: solid 1px #bdc3c7; }
-    .data li:last-child {
-      border: none; }
-    .data li span {
-      display: block;
-      text-transform: uppercase;
-      font-size: .5em;
-      margin-top: .6em;
-      font-weight:700;
-    }
-
-.desc {
-  position: absolute;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  padding: 1.2em 1em 0 1em;
-  color: white;
-  text-align: center;
-  opacity: 0;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in; }
-  .desc h3 {
-    font-size: 1.2em;
-    margin-bottom: .5em; }
-  .desc p {
-    font-size: .9em;
-    line-height: 1.5em; }
-
-.follow {
-  margin: 1.5em auto 0 auto;
-  background-color: #36cad1;
-  width: 150px;
-  color: white;
-  text-align: center;
-  padding: .5em;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease;
-  -moz-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease;
+  -webkit-transform: translateY(calc(70px + 1em));
+          transform: translateY(calc(70px + 1em));
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
-  .follow:hover {
+.card .data .content {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+}
+.card .author {
+  font-size: 12px;
+}
+.card .title {
+  margin-top: 10px;
+  color: #626D7B;
+}
+.card .text {
+  height: 70px!important;
+  margin: 0;
+}
+.card input[type='checkbox'] {
+  display: none;
+}
+.card input[type='checkbox']:checked + .menu-content {
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+}
+
+
+.monster .wrapper {
+  background: url("https://i.imgur.com/Luw1p7cr.jpg") center/cover no-repeat;
+}
+.monster .wrapper:hover .menu-content span {
+  -webkit-transform: translate(-50%, -10px);
+          transform: translate(-50%, -10px);
+  opacity: 1;
+}
+.monster .header {
+  color: #fff;
+  padding: 1em;
+  background: #F7F7F7;
+}
+.monster .header::before, .monster .header::after {
+  content: '';
+  display: table;
+}
+.monster .header::after {
+  clear: both;
+}
+.monster .header .date {
+  float: left;
+  font-size: 12px;
+
+}
+
+#date{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.monster .menu-content {
+  float: right;
+}
+.monster .menu-content li {
+  margin: 0 5px;
+  position: relative;
+}
+.monster .menu-content span {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+}
+.monster .data {
+  color: transparent;
+  background: #F7F7F7;
+  -webkit-transform: translateY(calc(70px + 4em));
+          transform: translateY(calc(70px + 4em));
+}
+.monster .title a {
+  color: #626D7B;
+  text-decoration: none;
+}
+.monster .button {
+  display: block;
+  width: 100px;
+  margin: 2em auto 1em;
+  text-align: center;
+  font-size: 10pt;
+  color: #36cad1;
+  line-height: 1;
+  position: relative;
+  font-weight: 700;
+  cursor: pointer;
+}
+.monster .button::after {
+  content: '\2192';
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.monster .button:hover::after {
+  -webkit-transform: translate(5px, -50%);
+          transform: translate(5px, -50%);
+  opacity: 1;
+}
+
+
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 12pt;
+    border: none;
     cursor: pointer;
-  }
+    transition: ease .5s all;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F7F7F7;
+    min-width: 160px;
+    z-index: 2;
+    border-bottom: solid 2px #F44336;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #36cad1;
+}
+.btn-delete{
+  color: #F44336!important;
+}
+.btn-download{
+  color: #00BCD4 !important;
+}
