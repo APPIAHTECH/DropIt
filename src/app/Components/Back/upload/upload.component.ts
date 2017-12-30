@@ -19,7 +19,7 @@ export class UploadComponent implements OnInit {
   constructor() {
     this.text = "Got A New Track ?"
     this.previweImageLink = "https://i.imgur.com/cKaoj9u.jpg"
-    this.state = 2
+    this.state = 1
     this.percentatgeUpload = 0
     this.validInfo = false
     this.readyToUpload = false
@@ -63,7 +63,9 @@ export class UploadComponent implements OnInit {
   isValid(){
     this.validInfo = true
   }
+  
   getData(){}
+
   upload(){
 
   }

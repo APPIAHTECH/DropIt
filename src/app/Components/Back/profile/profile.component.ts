@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { NotificationComponent } from '../notification/notification.component'
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +10,11 @@ export class ProfileComponent implements OnInit {
 
   tab:number
   cards:Array<String>
-  constructor() {   this.tab = 1; this.cards = []}
+
+  constructor() {
+    this.tab = 1
+    this.cards = []
+  }
 
   ngOnInit() {
 
@@ -17,7 +22,7 @@ export class ProfileComponent implements OnInit {
     this.cards.push("Hola")
     this.cards.push("Hola")
     this.cards.push("Hola")
-    
+
   }
 
   selectTab(tab:number){
@@ -29,5 +34,12 @@ export class ProfileComponent implements OnInit {
     return this.tab === checkTab
   }
 
+  delete(){
+    // this.notificationComponent.create({
+    //   alertType : "info",
+    //   message : "Stephen funciona ? ",
+    //   component: "section.alert"
+    // })
+  }
 
 }
