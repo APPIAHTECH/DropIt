@@ -23,7 +23,7 @@ import { SettingsComponent } from './Components/Back/settings/settings.component
 import { EditComponent } from './Components/Back/edit/edit.component';
 
 const appRoutes: Routes = [
-  { path: '', component: FrontComponent },
+  { path: '/', component: FrontComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'reset/password', component: ResetComponent },
