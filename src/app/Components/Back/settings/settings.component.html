@@ -1,3 +1,155 @@
-<p>
-  settings works!
-</p>
+<app-navigation></app-navigation>
+  <section id="settings">
+    <div id="left-handSide">
+
+      <div id="options">
+        <ul id="opUl">
+          <li [ngClass]="{'active': isSelected(1)}" (click)="selectTab(1)">Account Basics</li>
+          <li [ngClass]="{'active': isSelected(2)}" (click)="selectTab(2)">Profile</li>
+          <li [ngClass]="{'active': isSelected(3)}" (click)="selectTab(3)">Notifications</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="right-handSide">
+      <div id="optionsContainer">
+
+        <div  *ngIf="isSelected(1)">
+
+          <div id="bigSections">
+            <h2>Account</h2>
+            <p>Setup your account</p>
+          </div>
+
+          <div class="sec">
+            <div class="opt-left">
+              <h3>Type</h3>
+            </div>
+            <div class="opt-right">
+              <label class="container"> Prenium
+                <input type="radio" name="checkbox">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container"> Free
+                <input type="radio" checked="checked" name="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="opt-left">
+              <h3>Space</h3>
+            </div>
+            <div class="opt-right">
+              <h4>10254</h4>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div  *ngIf="isSelected(2)">
+
+          <div id="bigSections">
+            <h2>Profile</h2>
+            <p>Music is life </p>
+          </div>
+
+          <div class="sec">
+            <div class="opt-left">
+              <h3>Username</h3>
+            </div>
+            <div class="opt-right">
+              <h4>Monster Krod</h4>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="opt-left">
+              <h3>Email</h3>
+            </div>
+            <div class="opt-right">
+              <h4>eunisaesea@gmail.com</h4>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="opt-left">
+              <h3>Projects</h3>
+            </div>
+            <div class="opt-right">
+              <h4>10254</h4>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="opt-left">
+              <h3>Followers</h3>
+            </div>
+            <div class="opt-right">
+              <h4>10254</h4>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div  *ngIf="isSelected(3)">
+            <div id="bigSections">
+              <h2>Notifications</h2>
+              <p>We'll always tel you about important changes</p>
+            </div>
+
+            <div class="sec">
+              <div class="opt-left">
+                <h3>When you're on Drop it</h3>
+              </div>
+              <div class="opt-right">
+                <label class="container"> Get notifications from every one
+                  <input type="radio" name="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="container"> Only from people you follow
+                  <input type="radio" checked="checked" name="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sec">
+              <div class="opt-left">
+                <h3>By email</h3>
+              </div>
+              <div class="opt-right">
+                <label class="container">Email address
+                  <input type="checkbox" name="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+            </div>
+
+            <div class="sec">
+              <div class="opt-left">
+                <h3>On your desktop</h3>
+              </div>
+              <div class="opt-right">
+                <label class="container"> Chrome browser notifications
+                  <input type="checkbox" name="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div id="down">
+        <button type="button" name="button" id="cancelSettings">Cancel</button>
+        <button type="button" name="button" id="saveSettings">Save settings</button>
+      </div>
+    </div>
+
+  </section>
+<app-footer></app-footer>

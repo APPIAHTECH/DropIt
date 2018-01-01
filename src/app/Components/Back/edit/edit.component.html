@@ -1,0 +1,69 @@
+<app-navigation></app-navigation>
+
+  <section>
+    <form class="form" *ngIf="getState() == 1">
+      <label>Name</label>
+      <input type="text" name="username" placeholder="name ...">
+
+      <label for="fdes">Description</label>
+      <textarea name="description" id="fdes" maxlength="200"></textarea>
+
+
+      <label for="genre">Genre * </label>
+      <select id="genre" name="genre">
+        <option [value]="item" *ngFor="let item of category">{{item}}</option>
+      </select>
+
+      <label for="vst">Vst * </label>
+      <p id="already">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+      <select id="vst" name="vst" multiple>
+        <option [value]="item" *ngFor="let item of vstList">{{item}}</option>
+      </select>
+
+      <label for="visibility">Visibility * </label>
+      <select id="visibility" name="visibility">
+        <option value="public">Public</option>
+        <option value="private" disabled="true">Private</option>
+      </select>
+
+      <input type="submit" name="submit" value="Next" (click)="nextSection()">
+    </form>
+
+    <form class="form" *ngIf="getState() == 2">
+
+      <label>Link</label>
+      <input type="text" name="imagelink" placeholder="Image link  ..." [(ngModel)]="previweImageLink">
+
+      <div id="prev"  [ngStyle]="{'background': 'url(' + previweImageLink + ') no-repeat 0 0'}"></div>
+
+      <input type="submit" name="submit" value="Previews" class="prev">
+      <input type="submit" name="submit" value="Update">
+    </form>
+
+
+    <form class="form" *ngIf="getState() == 3">
+
+      <div class="set-size charts-container">
+        <p id="already">Select and <a>Drop Here</a></p>
+        <div class="pie-wrapper progress-30">
+
+          <span class="label" *ngIf="readyToUpload">{{percentatgeUpload}}<span class="smaller">%</span></span>
+          <span class="label" *ngIf="!readyToUpload">
+            <i class="fa fa-dropbox" aria-hidden="true"></i>
+          </span>
+          <div class="pie">
+            <div class="left-side half-circle"></div>
+            <div class="right-side half-circle"></div>
+          </div>
+        </div>
+
+      </div>
+      <p id="already"><a for="fi">Or</a></p>
+      <label for="file" id="chose"><strong>Choose a file</strong></label>
+      <input type="file" name="file" id="file" class="inputfile" />
+      <input type="submit" name="submit" value="Upload" class="disabled" [attr.disabled]="!readyToUpload" [ngClass]="{'disabled': !readyToUpload}">
+    </form>
+
+
+  </section>
+<app-footer></app-footer>

@@ -91,6 +91,24 @@ div#select{
   top: 10px;
 }
 
+#ChangeImage{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(229 , 230 , 235 , 0.8);
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  color: #282C34;
+  opacity: 0;
+}
+
+#circleProfileBig:hover #ChangeImage{
+  opacity: 1;
+  cursor: pointer;
+}
 
 /*dash css*/
 section#dash{

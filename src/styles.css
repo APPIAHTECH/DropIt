@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro');
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
-
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,600");
 
 *{
   font-family: 'Lato', sans-serif;
@@ -9,8 +8,9 @@
   box-sizing: border-box;
 }
 
-a , p , h1 , h2 , h3 , h4 , h6{
+a , p , h1 , h2 , h3 , h4 , h5 , h6{
   font-family: 'Lato', sans-serif;
+  color: #282C34;
 }
 
 button{

@@ -1,0 +1,188 @@
+section#settings{
+  width: 100%;
+  height: auto;
+  background: #E9E9E9;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 50px;
+}
+
+div#left-handSide , div#right-handSide{
+  width: 80%;
+  height: 100%;
+  box-sizing: border-box;
+  margin-right: 50px;
+}
+
+div#left-handSide{
+  width: 20%;
+  margin: 50px;
+  background: white;
+}
+
+div#options , div#optionsContainer{
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+
+}
+
+div#optionsContaine{
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+ul#opUl , ul#opUl li , a{
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul#opUl li{
+  padding: 20px;
+  border-bottom: solid 2px #F0F0F0;
+}
+
+ul#opUl li:hover{
+  background: #E9E9E9;
+  cursor: pointer;
+}
+div#optionsContainer{
+  height: auto;
+}
+
+div#bigSections{
+  width: 100%;
+  padding: 20px;
+  padding-top: 5px;
+  border-bottom: solid 2px #F0F0F0;
+}
+
+.sec{
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  padding: 5px;
+  padding-left: 20px;
+  border-bottom: solid 2px #F0F0F0;
+  font-weight: normal;
+}
+
+
+/* The container */
+div.sec .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    padding-top: 5px;
+    cursor: pointer;
+    font-size: 10pt;
+    user-select: none;
+    margin-top: 12px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/* Hide the browser's default radio button */
+div.sec .container input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+div.sec .container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+div.sec .container input:checked ~ .checkmark {
+    background-color: #36cad1;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+div.sec .container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+div.sec .container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+div.sec h3{
+  font-size: 11pt;
+  font-weight: normal;
+}
+div.opt-left , div.opt-right{
+  width: 100%;
+  padding: 10px;
+  padding-top: 5px;
+  text-align: justify;
+}
+
+div.opt-left{
+  width: 50%;
+}
+
+button#cancelSettings , button#saveSettings{
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  padding: 12px 35px;
+  line-height: 20px;
+  font-weight: normal;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  text-align: center;
+  background-color: #36cad1;
+  box-shadow: none;
+  text-shadow: none;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+button#cancelSettings{
+  background: #484848;
+}
+
+div#down{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+
+.opt-right h4{font-weight: normal;}

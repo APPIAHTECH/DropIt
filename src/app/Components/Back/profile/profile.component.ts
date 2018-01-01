@@ -26,7 +26,6 @@ export class ProfileComponent implements OnInit {
   }
 
   selectTab(tab:number){
-    let select = "-1"
     this.tab = tab
   }
 
