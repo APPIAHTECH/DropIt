@@ -4,12 +4,13 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ini": "nodemon server.js"
+    "ini": "nodemon server.js",
+    "postinstall": "bower install && gulp build-libs && gulp build"
   },
   "private": true,
   "dependencies": {
