@@ -9,7 +9,7 @@ let app = express()
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://dropt-it-up.herokuapp.com:80');
+    res.setHeader('Access-Control-Allow-Origin', 'https://dropt-it-up.herokuapp.com:80/');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
