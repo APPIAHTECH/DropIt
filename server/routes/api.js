@@ -8,6 +8,9 @@ let upload = multer({ dest: path.resolve(__dirname , './../uploads')  ,    maxFi
 
 //User api
 
+router.get('/' , (req , res)=>{
+  res.send("it works ? ")
+})
 router.post('/auth/singup', UserController.singup)
 router.post('/auth/login', UserController.login)
 router.get('/auth/confirmation/:token', UserController.confirmation)
