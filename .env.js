@@ -19,7 +19,7 @@ module.exports = {
 
   SERVER:{
     HOST : 'https://dropt-it-up.herokuapp.com',
-    PORT : '3000',
+    PORT : '80',
     FULLPATH : 'https://dropt-it-up.herokuapp.com:80/'
   }
 
