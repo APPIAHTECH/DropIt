@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HelperService } from './../../../global/Helper.service';
+import { User } from './../../../model/User.model';
 
 @Component({
   selector: 'app-navigation',
@@ -9,7 +11,7 @@ export class NavigationComponent implements OnInit {
 
   scrolling:boolean = false
 
-  constructor() { }
+  constructor(public helper:HelperService) { }
 
   ngOnInit() {window.onscroll = ()=> this.scrollFunction()}
 
@@ -19,6 +21,12 @@ export class NavigationComponent implements OnInit {
       this.scrolling = true
     else
       this.scrolling = false
+  }
+
+  exit(){
+    localStorage.clear()
+    sessionStorage.clear()
+    this.helper.redirectTo('/')
   }
 
 }

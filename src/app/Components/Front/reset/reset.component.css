@@ -74,7 +74,7 @@ div.instruction{
   justify-content: center;
 }
 
-input[type="email"]{
+input[type="email"] , [type="text"] , [type="password"]{
     font-size: 13px;
     color: #717B88;
     width: 100%;

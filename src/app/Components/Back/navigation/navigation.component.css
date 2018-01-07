@@ -61,6 +61,7 @@ form#form{
   height: auto;
 }
 
+a#exit{cursor: pointer;}
 div.circle{
   width: 30px;
   height: 30px;

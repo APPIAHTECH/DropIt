@@ -18,7 +18,7 @@ export class User{
   private userAuthUrlSingup = AppComponent.HOST + 'api/auth/singup';
   private userAuthUrlLogin = AppComponent.HOST + 'api/auth/login';
   private userAuthUrlResetPassword:string = AppComponent.HOST + 'api/auth/resetPassword'
-  private userAuthUrlRestorPassword:string = AppComponent.HOST + 'api/auth/restorPassword'
+  private userAuthUrlResetNewPassword:string = AppComponent.HOST + 'api/auth/resetPassword/newPassword'
   private userDataUrl:string = AppComponent.HOST + 'api/user/data'
 
   constructor(private request:DataRequestService){
@@ -65,8 +65,8 @@ export class User{
       .subscribe( (response) => {callback(response , null)} , (error)=> {callback(null , error)});
   }
 
-  public restorPassword(user:this , callback):void{
-    this.request.post(this.userAuthUrlRestorPassword , user)
+  public resetPasswordNewPassword(user:this , callback):void{
+    this.request.post(this.userAuthUrlResetNewPassword , user)
       .subscribe( (response) => {callback(response , null)} , (error)=> {callback(null , error)});
   }
 

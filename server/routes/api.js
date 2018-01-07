@@ -10,6 +10,8 @@ let upload = multer({ dest: path.resolve(__dirname , './../uploads')  ,    maxFi
 
 router.post('/auth/singup', UserController.singup)
 router.post('/auth/login', UserController.login)
+router.post('/auth/resetPassword', UserController.resetPassword)
+router.post('/auth/resetPassword/newPassword', UserController.changePassword)
 router.get('/auth/confirmation/:token', UserController.confirmation)
 router.get('/user/data', UserController.isAuth , UserController.getUser)
 

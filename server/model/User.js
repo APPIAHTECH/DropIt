@@ -35,14 +35,13 @@ module.exports = class User {
       if(this.token){
         this.createdAt = moment().unix()
         this.updatedAt = moment().unix()
-        console.log(link);
-        db.insert(collectionName , this)
-        // return service.sendMail(this.email , 'DAW confirmation pendient', "<h1>Hello and welcome to DAW. Please confirm your email <a href='"+link+"'>confirmation link </a>" , (error , info)=>{
-        //   if (error) return res.json({error:error , link:link});
-        //   db.insert(collectionName , this)
-        //   console.log('Message %s sent: %s', info.messageId, info.response);
-        //   return;
-        // });
+        // db.insert(collectionName , this)
+        return service.sendMail(this.email , 'Dropit confirmation [Activate Account]', "<h1>Hello and welcome to Dropit. Please confirm your email <a href='"+link+"'>confirmation link </a>" , (error , info)=>{
+          if (error) return res.json({error:error , link:link});
+          db.insert(collectionName , this)
+          console.log('Message %s sent: %s', info.messageId, info.response);
+          return;
+        });
       }
 
     });
@@ -74,7 +73,13 @@ module.exports = class User {
 
   static updateUser(userPublicID , newUpdate , callback){
     db.update(collectionName , userPublicID ,  newUpdate , (err , result)=>{
-      if(err) console.log(err);
+      callback(err , result)
+    })
+
+  }
+
+  static updateUserBy(query , newUpdate , callback){
+    db.updateGeneric(collectionName , query ,  newUpdate , (err , result)=>{
       callback(err , result)
     })
   }

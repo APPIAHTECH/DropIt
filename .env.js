@@ -12,8 +12,8 @@ module.exports = {
   MAILSettings : {
     SERVICE : 'gmail',
     AUTH : {
-      USER : 'eunisaesea@gmail.com',
-      PASSWORD : '123456'
+      USER : 'dropitup3@gmail.com',
+      PASSWORD : 'wInRbJOqq06Z5P0'
     }
   }
 }

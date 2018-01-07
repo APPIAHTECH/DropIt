@@ -1,26 +1,19 @@
 module.exports = {
   DBSettings : {
     DB:"DAWPDB",
-    HOST:"http://localhost",
+    HOST:"mongodb://eunisae:admin@ds247077.mlab.com:47077/dropit",
     PORT:23456
   },
 
   JWT:{
-    SECREET_TOKEN : "SpatulaMonsterKrod"
+    SECREET_TOKEN : "Dropit"
   },
 
   MAILSettings : {
     SERVICE : 'gmail',
     AUTH : {
-      USER : 'eunisaesea@gmail.com',
-      PASSWORD : '123456'
+      USER : 'dropitup3@gmail.com',
+      PASSWORD : 'wInRbJOqq06Z5P0'
     }
-  },
-
-  SERVER:{
-    HOST : 'https://localhost',
-    PORT : '3000',
-    FULLPATH : 'https://localhost:3000/'
   }
-
 }

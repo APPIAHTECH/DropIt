@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataRequestService } from './../../../global/data-reuqest.service';
 import { HelperService } from './../../../global/Helper.service';
 import { User } from './../../../model/User.model';
 
@@ -26,8 +25,9 @@ export class LoginComponent implements OnInit {
       if(this.validation()){
 
         this.user.login(this.user , (user)=>{
+          console.log(user)
+          if(user.exist && user.validatedAccount && user.passwordMathed){
 
-          if(user.exist && user.passwordMathed){
             this.msg = "Let go! "
             this.errorMsg = "Dropit is waiting for you :D"
             localStorage.setItem('tokenAcces' , user.tokenAcces)
@@ -36,13 +36,17 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('user' , JSON.stringify(res))
               this.helper.redirectTo('/dashboard')
             })
-            
+
           }else if(!user.exist){
             this.msg = "Unlucky "
             this.errorMsg = "Wrong credentianls , have you wrote the email and password correctly ?"
           }else if(!user.passwordMathed){
             this.msg = "Unlucky "
             this.errorMsg = "Wrong credentianls ,  have you wrote the email and password correctly ? "
+
+          }else{
+            this.msg = "Error "
+            this.errorMsg = "UPS !.Something went wrong , refresh the page and try it again. "
           }
 
         })
