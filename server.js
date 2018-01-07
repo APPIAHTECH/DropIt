@@ -6,34 +6,15 @@ let morgan = require('morgan')
 let app = express()
 
 //Server Access
-app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://dropt-it-up.herokuapp.com:80');
-
-    // Request methods you wish to allow
+app.use( (req, res, next) =>{
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization,application/json,multipart/form-data');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
     next();
 });
 
 app.use(morgan('dev'))
-
-// DB connection
-let db = require('./server/db/db')
-
-db.connection().then((db)=> {
-  console.dir("Connected to the DB");
-  db.close();
-}).catch((err)=> console.error("Couldint connected to DB"));
 
 // API file
 let api = require('./server/routes/api')
@@ -52,7 +33,7 @@ app.use('/api', api)
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'dist/index.html')))
 
 //Set Port
-const port = process.env.PORT || '80'
+const port = process.env.PORT || '3500'
 app.set('port', port)
 
 const server = http.createServer(app)

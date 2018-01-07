@@ -1,7 +1,7 @@
 module.exports = {
   DBSettings : {
     DB:"DAWPDB",
-    HOST:"https://dropt-it-up.herokuapp.com",
+    HOST:"mongodb://eunisae:admin@ds247077.mlab.com:47077/dropit",
     PORT:23456
   },
 
@@ -15,12 +15,5 @@ module.exports = {
       USER : 'eunisaesea@gmail.com',
       PASSWORD : '123456'
     }
-  },
-
-  SERVER:{
-    HOST : 'https://dropt-it-up.herokuapp.com',
-    PORT : '80',
-    FULLPATH : 'https://dropt-it-up.herokuapp.com:80/'
   }
-
 }

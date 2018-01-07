@@ -1,32 +1,36 @@
 let User = require('./../model/User')
-let service = require('./../shared/service')
+let service = require('./../global/service')
 let moment = require('moment')
 let db = require('../db/db')
+const redirectTo = "http://localhost:4200/login"
+
 
 module.exports = class UserController {
   constructor() {}
 
   static singup(req , res , next){
     let email = req.body.email
-
+    let username = req.body.username
+    let password = req.body.password
     User.findUser({ 'email': email }, {} ,(user)=>{
 
       if(!user){
+        if(User.validateSignup(username , email , password)){
+          let user = new User({
+            email : email,
+            username : req.body.username,
+            password : req.body.password,
+            registrationType : 'local',
+            profileImg : req.body.profileImg
+          })
+          user.save()
+          res.send({created : false , toValidate:true , error:false})
+        }else
+          res.send({error:true})
 
-        let user = new User({
-          email : email,
-          username : req.body.username,
-          password : req.body.password,
-          registrationType : 'local',
-          description : "",
-          profileImg : req.body.profileImg
-        })
-
-        user.save()
-        res.send({find : false , toValidate:true})
       }
       else
-        return res.json({find : true, userExist : true})
+        res.send({exist : true})
     });
 
   }
@@ -36,33 +40,38 @@ module.exports = class UserController {
     let email = req.body.email;
     let password = req.body.password;
 
-    User.findUser({ 'email': email }, {} ,(user)=>{
+    if(User.validateLogin(email , password)){
 
-      if(user){
-        service.comparePassword(password , user.password , (err ,passwordMathed)=>{
-          if (err) return console.error(err);
+      User.findUser({'email': email }, {} ,(user)=>{
 
-          if(passwordMathed){
-            return res.json({
-              find : true ,
-              passwordMathed,
-              tokenAcces : service.createToken(user)
-            });
-          }
-          else
-            return res.json({passwordNotMathed : passwordMathed});
+        if(user){
+          service.comparePassword(password , user.password , (err ,passwordMathed)=>{
+            if (err) return res.json({error : true})
 
-        });
-      }
-      else
-        return res.json({find : false})
-    });
+            if(passwordMathed){
+              return res.json({
+                exist : true ,
+                passwordMathed,
+                tokenAcces : service.createToken(user)
+              });
+            }
+            else
+              return res.json({passwordMathed});
+
+          });
+        }
+        else
+          return res.json({exist : false})
+      });
+
+    }else
+      return res.json({error : true})
+
 
   }
 
   static confirmation(req , res , next){
-    let token = (req.params.token).toString().trim();
-
+    let token = (req.params.token).toString().trim() , id;
     service.unDecodeToken(token , (err , payload)=>{
 
       if(err) return res.status(500).send({message : "Invalid Token"});
@@ -70,15 +79,31 @@ module.exports = class UserController {
       if(payload.expires <= moment().unix())
         return res.status(401).send({message : "Token has expires"});
 
-        User.updateUser(payload.sub, { validatedAccount: true },()=>{
-          return res.json({validatedAccount : true});
+        id = service.decrypt(payload.sub)
+
+        User.findUser({ '_id': db.ObjectID(id) }, {} ,(user)=>{
+
+          if(user){
+            if(user.validatedAccount)
+              res.redirect(redirectTo);
+            else{
+              User.updateUser(id, { validatedAccount: true },()=>{
+                return res.redirect(redirectTo)
+              });
+            }
+          }
+          else
+            return res.status(500).send({message : "Invalid user token"});
         });
+
+
 
     });
   }
 
+
   static getUser(req, res , next){
-    let publicID = db.ObjectID(req.user)
+    let publicID = db.ObjectID((service.decrypt(req.user)))
     User.findUser({ 'publicID': publicID }, { '_id' : 0 , 'token': 0 , 'password' : 0 , 'validatedAccount' : 0 , 'updatedAt' : 0} , (user)=>{
       if(user){
         return res.json({find : true , userData : user});
@@ -93,7 +118,6 @@ module.exports = class UserController {
       return res.status(403).send({message : "Permision Deniend"});
 
     var token = req.headers.authorization.split(' ')[1];
-    console.log("token -> ", token);
     service.unDecodeToken(token , function(err , payload){
 
       if(err) return res.status(500).send({message : "Invalid Token"});

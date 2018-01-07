@@ -20,3 +20,10 @@ body{
   box-sizing: border-box;
 
 }
+
+
+input.error{
+  border-color: #F44336!important;
+  border-style: solid;
+  transition: all ease .5s;
+}

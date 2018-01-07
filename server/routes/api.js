@@ -7,6 +7,7 @@ let UserController = require('../controller/UserController')
 let upload = multer({ dest: path.resolve(__dirname , './../uploads')  ,    maxFileSize: Infinity })
 
 //User api
+
 router.post('/auth/singup', UserController.singup)
 router.post('/auth/login', UserController.login)
 router.get('/auth/confirmation/:token', UserController.confirmation)

@@ -7,9 +7,9 @@ class DB{
   constructor(){}
 
   static connection(){
-    let url = "";
-    let connect = null;
-    url = 'mongodb://eunisae:admin@ds113936.mlab.com:13936/dawdb'
+    let url = ""
+    let connect = null
+    url = env.DBSettings.HOST
     connect = MongoClient.connect(url)
     return connect
   }

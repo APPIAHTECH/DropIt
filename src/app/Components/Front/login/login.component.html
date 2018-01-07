@@ -1,13 +1,13 @@
 <app-nav></app-nav>
 <section>
-  <h2>READY ? </h2>
-  <p class="p">What's The New Stuff Are You Building ? , Welcome Back :D</p>
+  <h2>{{msg}}</h2>
+  <p class="p">{{errorMsg}}</p>
 
   <form class="form">
-    <input type="email" name="email" placeholder="enter your email here ...">
-    <input type="password" name="password" placeholder="enter your password ...">
+    <input type="email" name="email" placeholder="enter your email here ..." [ngClass]="{'error': mailError}" [(ngModel)]="user.email" (change)="mailError = false">
+    <input type="password" name="password" placeholder="enter your password ..." [ngClass]="{'error': passError}" [(ngModel)]="user.password" (change)="passError = false">
     <p id="already">Forgot password ? <a href="/reset/password">Reset Password</a></p>
-    <input type="submit" name="submit" value="Login">
+    <input type="submit" name="submit" value="Login" (click)="login()">
   </form>
 
 </section>
