@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(public user:User , public helper:HelperService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 
 
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
       if(this.validation()){
 
         this.user.login(this.user , (user)=>{
-          console.log(user)
+
           if(user.exist && user.validatedAccount && user.passwordMathed){
 
             this.msg = "Let go! "
@@ -33,6 +32,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('tokenAcces' , user.tokenAcces)
             this.user.setAccesToken(user.tokenAcces)
             this.user.getData((res)=>{
+              console.log(res)
               localStorage.setItem('user' , JSON.stringify(res))
               this.helper.redirectTo('/dashboard')
             })

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { User } from './../../../model/User.model'
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsComponent implements OnInit {
 
   tab:number
-
-  constructor() { this.tab = 1 }
-
-  ngOnInit() {
+  isPrenim:boolean = false
+  constructor(public user:User) {
+    this.tab = 1
+    let model = JSON.parse(localStorage.getItem('user'))
+    user.setModel(model)
   }
+
+  ngOnInit() {}
 
   selectTab(tab:number){
     this.tab = tab
@@ -21,5 +24,7 @@ export class SettingsComponent implements OnInit {
   isSelected(checkTab:number){
     return this.tab === checkTab
   }
+
+  save(){}
 
 }

@@ -66,10 +66,8 @@ div.circle{
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-image: url('https://vignette.wikia.nocookie.net/vsbattles/images/2/27/SSGSS_Goku.jpeg/revision/latest?cb%5Cx3d20151009132808');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-position: center !important;
+  background-size: cover !important;
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
   margin-top: 10px;
 }

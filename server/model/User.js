@@ -21,6 +21,15 @@ module.exports = class User {
     this.profileImg = user.profileImg
     this.validatedAccount = false
     this.token = null
+    this.accountType = 'free'
+    this.followers = []
+    this.following = []
+    this.accountInfo = {
+      totalSpace: "5",
+      avilableSpace: "5",
+      usedSpace: "0"
+    }
+    this.notificationConfig = {}
   }
 
   save(){

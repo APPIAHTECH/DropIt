@@ -20,7 +20,7 @@
 
       <div class="dropdown">
 
-        <div class="circle dropbtn">
+        <div class="circle dropbtn" [ngStyle]="{'background': '#fff url(' + user.getProfileImg() + ') no-repeat 0 0'}">
           <i class="fa fa-angle-down" aria-hidden="true" id="downarrow"></i>
         </div>
         <div class="dropdown-content">

@@ -11,9 +11,14 @@ export class User{
   public username:string;
   public password:string;
   public registrationType:string;
+  public accountType:string;
+  public followers:number
+  public following:number;
+  public accountInfo:any;
   public profileImg:string;
   public restorPasswordToken : string;
   public accesToken:string;
+  public notificationConfig:any;
 
   private userAuthUrlSingup = AppComponent.HOST + 'api/auth/singup';
   private userAuthUrlLogin = AppComponent.HOST + 'api/auth/login';
@@ -24,6 +29,12 @@ export class User{
   constructor(private request:DataRequestService){
     this.setProfileImg("http://www.creativehdwallpapers.com/uploads/large/abstract-wallpaper/abstract-wallpaper-purple.jpg");
   }
+
+  public setFollowers(followers:number){this.followers = followers}
+  public setFollowing(follo:number){this.following = follo}
+  public setAccountType(type:string){this.accountType = type}
+  public setNotificationConfig(noti:any){this.notificationConfig = noti}
+  public setAccountInfo(acc:any){this.accountInfo = acc}
 
   public setUserID(id:string){this.userID = id}
   public setEmail(email:string){this.email = email}
@@ -37,6 +48,13 @@ export class User{
 
 
   public setRestorPasswordToken(token:string){this.restorPasswordToken = token}
+
+  public getFollowers(){return this.followers}
+  public getFollowing(){return this.following}
+  public getAccountType(){return this.accountType}
+  public getNotificationConfig(){return this.notificationConfig}
+  public getAccountInfo(){return this.accountInfo}
+
 
   public getUserID(){return this.userID}
   public getEmail(){return this.email}
@@ -55,7 +73,6 @@ export class User{
   }
 
   public singup(user:this , callback):void{
-    console.log("url -> ", this.userAuthUrlSingup )
     this.request.post(this.userAuthUrlSingup , user)
       .subscribe( (response) => {callback(response , null)} , (error)=> {callback(null , error)});
   }
@@ -83,6 +100,11 @@ export class User{
     this.setUsername(model.username)
     this.setEmail(model.email)
     this.setProfileImg(model.profileImg)
+    this.setAccountType(model.accountType)
+    this.setFollowers(model.followers)
+    this.setFollowing(model.following)
+    this.setNotificationConfig(model.notificationConfig)
+    this.setAccountInfo(model.accountInfo)
   }
 
 }

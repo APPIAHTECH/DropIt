@@ -143,6 +143,7 @@ module.exports = class UserController {
       if(user){
 
         if(user.validatedAccount){
+
           service.hasPassword(newPassword , 10 , (err , hashedPassword)=>{
 
             updatingUser = user
@@ -171,10 +172,14 @@ module.exports = class UserController {
   }
 
   static getUser(req, res , next){
-    let publicID = db.ObjectID((service.decrypt(req.user)))
-    User.findUser({ 'publicID': publicID }, { '_id' : 0 , 'token': 0 , 'password' : 0 , 'validatedAccount' : 0 , 'updatedAt' : 0} , (user)=>{
-      if(user && user.validatedAccount){
-        return res.json({find : true , userData : user});
+
+    let userID = service.decrypt(req.user)
+    User.findUser({ '_id': (db.ObjectID(userID)) }, { '_id' : 0 , 'token': 0 , 'password' : 0 , 'updatedAt' : 0 , 'createdAt' : 0 } , (user)=>{
+      if(user){
+        if(user.validatedAccount){
+          return res.json({find : true , userData : user});
+        }
+
       }
       else
         return res.json({find : false})
@@ -182,11 +187,12 @@ module.exports = class UserController {
   }
 
   static isAuth(req, res , next){
+
     if(!req.headers.authorization)
       return res.status(403).send({message : "Permision Deniend"});
 
     var token = req.headers.authorization.split(' ')[1];
-    service.unDecodeToken(token , function(err , payload){
+    service.unDecodeToken(token , (err , payload)=>{
 
       if(err) return res.status(500).send({message : "Invalid Token"});
 

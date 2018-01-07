@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { NotificationComponent } from '../notification/notification.component'
+import { User } from './../../../model/User.model'
 
 @Component({
   selector: 'app-profile',
@@ -11,9 +11,11 @@ export class ProfileComponent implements OnInit {
   tab:number
   cards:Array<String>
 
-  constructor() {
+  constructor(public user:User) {
     this.tab = 1
     this.cards = []
+    let model = JSON.parse(localStorage.getItem('user'))
+    user.setModel(model)
   }
 
   ngOnInit() {
@@ -34,11 +36,7 @@ export class ProfileComponent implements OnInit {
   }
 
   delete(){
-    // this.notificationComponent.create({
-    //   alertType : "info",
-    //   message : "Stephen funciona ? ",
-    //   component: "section.alert"
-    // })
+
   }
 
 }

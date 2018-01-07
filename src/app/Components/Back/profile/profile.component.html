@@ -1,18 +1,16 @@
 <app-navigation></app-navigation>
-  <section class="alert">
 
-  </section>
   <section id="myProfile">
-    <div id="bg"></div>
+    <div id="bg" [ngStyle]="{'background': '#fff url(' + user.getProfileImg() + ') no-repeat 0 0'}"></div>
     <div id="suscript">
 
-      <div id="circleProfileBig">
+      <div id="circleProfileBig" [ngStyle]="{'background': '#fff url(' + user.getProfileImg() + ') no-repeat 0 0'}">
         <div id="ChangeImage">
           <i class="fa fa-camera" aria-hidden="true"></i>
         </div>
 
         <div id="info">
-          <h4>eunisae</h4>
+          <h4>{{user.getUsername()}}</h4>
           <p id="projects">10254 projects <i class="fa fa-plus" aria-hidden="true"></i></p>
         </div>
       </div>
