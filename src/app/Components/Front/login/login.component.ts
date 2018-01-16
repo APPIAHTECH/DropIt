@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('tokenAcces' , user.tokenAcces)
             this.user.setAccesToken(user.tokenAcces)
             this.user.getData((res)=>{
-              console.log(res)
               localStorage.setItem('user' , JSON.stringify(res))
               this.helper.redirectTo('/dashboard')
             })

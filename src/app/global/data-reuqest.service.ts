@@ -50,9 +50,14 @@ export class DataRequestService {
   }
 
   public postContent(url:string , content:any , multiPart : boolean = false){
-    let header = new Headers();
+    let headers:Headers
+    if(multiPart){
+       headers = new Headers();
+       headers.append('Authorization', `Bearer ${this.authToken}`);
+    }else
+      headers = new Headers();
 
-    let options = new RequestOptions({ headers: header });
+    let options = new RequestOptions({ headers: headers });
 
     return this.http.post(url, content, options)
                  .map(this.extractData)

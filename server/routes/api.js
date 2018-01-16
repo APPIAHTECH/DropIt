@@ -13,7 +13,10 @@ router.post('/auth/login', UserController.login)
 router.post('/auth/resetPassword', UserController.resetPassword)
 router.post('/auth/resetPassword/newPassword', UserController.changePassword)
 router.get('/auth/confirmation/:token', UserController.confirmation)
+
 router.get('/user/data', UserController.isAuth , UserController.getUser)
+router.post('/user/update', UserController.isAuth , UserController.updateUser)
+router.get('/user/get/by/:id', UserController.getUserByID)
 
 //Project api
 router.get('/rates/views/:projectID', ProjectController.views)

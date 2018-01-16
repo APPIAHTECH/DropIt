@@ -32,7 +32,7 @@
               </label>
 
               <label class="container"> Free
-                <input type="radio" checked="checked" name="checkbox">
+                <input type="radio" checked="true" name="checkbox">
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -43,7 +43,7 @@
               <h3>Space</h3>
             </div>
             <div class="opt-right">
-              <h4>10254</h4>
+              <h3 id="aling">{{user.getAccountInfo().totalSpace}}MB</h3>
             </div>
           </div>
 
@@ -62,7 +62,7 @@
               <h3>Username</h3>
             </div>
             <div class="opt-right">
-              <h4>Monster Krod</h4>
+              <h4>{{user.getUsername()}}</h4>
             </div>
           </div>
 
@@ -71,7 +71,7 @@
               <h3>Email</h3>
             </div>
             <div class="opt-right">
-              <h4>eunisaesea@gmail.com</h4>
+              <h4>{{user.getEmail()}}</h4>
             </div>
           </div>
 
@@ -86,10 +86,19 @@
 
           <div class="sec">
             <div class="opt-left">
+              <h3>Following</h3>
+            </div>
+            <div class="opt-right">
+              <h4>{{user.getFollowing()}}</h4>
+            </div>
+          </div>
+
+          <div class="sec">
+            <div class="opt-left">
               <h3>Followers</h3>
             </div>
             <div class="opt-right">
-              <h4>10254</h4>
+              <h4>{{user.getFollowers()}}</h4>
             </div>
           </div>
 

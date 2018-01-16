@@ -1,7 +1,8 @@
 module.exports = {
   DBSettings : {
     DB:"DAWPDB",
-    HOST:"mongodb://eunisae:admin@ds247077.mlab.com:47077/dropit",
+    //HOST:"mongodb://eunisae:admin@ds247077.mlab.com:47077/dropit",
+    HOST:'mongodb://localhost:27017/dropitDB',
     PORT:23456
   },
 

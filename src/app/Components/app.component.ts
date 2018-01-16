@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationExtras , Router  , ActivatedRoute} from '@angular/router';
+import {NotificationComponent} from './Back/notification/notification.component';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,8 @@ import { NavigationExtras , Router  , ActivatedRoute} from '@angular/router';
 export class AppComponent {
 
   public static HOST = "http://localhost:3500/"
-  public static title = 'Dropit';
+  public static TITLE = 'Dropit';
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute , notifica:NotificationComponent) {
   }
 }

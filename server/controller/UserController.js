@@ -204,4 +204,44 @@ module.exports = class UserController {
     });
   }
 
+  static updateUser(req, res , next){
+    let updatingUser = null
+    let newUserData = req.body
+
+    let userID = service.decrypt(newUserData.userID)
+    User.findUser({ '_id': (db.ObjectID(userID)) }, {} ,(user)=>{
+
+      if(user){
+
+        if(user.validatedAccount){
+
+          updatingUser = user
+          updatingUser.username = newUserData.username
+          updatingUser.profileImg = newUserData.profileImg
+          updatingUser.accountType = newUserData.accountType
+
+          User.updateUserBy({"_id":user._id}, updatingUser ,(err , result)=>{
+              return res.json({updated:true , user: updatingUser})
+          });
+
+        }else
+          return res.json({updated:false , user: {}})
+      }
+
+    })
+  }
+
+  static getUserByID(req, res , next){
+    let userID = service.decrypt(req.params.id)
+    User.findUser({ '_id': (db.ObjectID(userID)) }, { '_id' : 0 , 'token': 0 , 'password' : 0 , 'updatedAt' : 0 , 'createdAt' : 0 } , (user)=>{
+      if(user){
+        if(user.validatedAccount){
+          return res.json({find : true , userData : user});
+        }
+
+      }
+      else
+        return res.json({find : false})
+    });
+  }
 }

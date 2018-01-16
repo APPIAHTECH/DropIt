@@ -397,3 +397,67 @@ a:hover{
 .btn-download{
   color: #00BCD4 !important;
 }
+
+#h2{
+  margin: auto;
+  padding: 10px;
+}
+#notfound{
+  width: 100%;
+  height: 250px;
+  padding-bottom: 1.5em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label#chose{
+  padding: 12px 35px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.inputfile > label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+}
+
+label + .inputfile:focus,
+label + .inputfile:hover {}
+
+
+label + .inputfile {
+	cursor: pointer; /* "hand" cursor */
+}
+
+
+label + .inputfile * {
+	pointer-events: none;
+}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label + .no-js .inputfile {
+    display: none;
+}

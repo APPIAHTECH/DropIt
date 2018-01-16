@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HelperService } from './../../../global/Helper.service';
-import { User } from './../../../model/User.model'
+import { User } from './../../../model/User.model';
+import {AppComponent} from './../../app.component';
 
 @Component({
   selector: 'app-navigation',
@@ -10,10 +11,14 @@ import { User } from './../../../model/User.model'
 export class NavigationComponent implements OnInit {
 
   scrolling:boolean = false
+  profileUrl:string
+  title:string
 
   constructor(public helper:HelperService , public user:User) {
+    this.title = AppComponent.TITLE
     let model = JSON.parse(localStorage.getItem('user'))
     user.setModel(model)
+    this.profileUrl = "profile/"+user.getUserID()
   }
 
   ngOnInit() {window.onscroll = ()=> this.scrollFunction()}

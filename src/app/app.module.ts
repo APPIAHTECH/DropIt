@@ -40,7 +40,7 @@ const appRoutes: Routes = [
   { path: 'settings', component: SettingsComponent },
   { path: 'project/detail/:id', component: DetailComponent },
   { path: 'project/edit/:id', component: EditComponent },
-  { path: 'user/my/profile', component: ProfileComponent }
+  { path: 'profile/:publicID', component: ProfileComponent }
 ];
 
 @NgModule({
@@ -69,7 +69,7 @@ const appRoutes: Routes = [
     HttpModule,
     JsonpModule,
   ],
-  providers: [DataRequestService , User , Project , HelperService],
+  providers: [DataRequestService , User , Project , HelperService , NotificationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

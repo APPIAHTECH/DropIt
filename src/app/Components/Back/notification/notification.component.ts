@@ -1,5 +1,4 @@
-import { Component, OnInit} from '@angular/core';
-import { Directive, Renderer, ElementRef , ViewChild } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 
 @Component({
   selector: 'app-notification',
@@ -8,35 +7,23 @@ import { Directive, Renderer, ElementRef , ViewChild } from '@angular/core';
 })
 export class NotificationComponent implements OnInit {
 
-  @ViewChild("alert") alert;
+  @Input('alertType') alertType
+  @Input('message') message
+  @Input('autoClose') autoClose
+  @Input('show') show
 
-  public alertType: string
-  public message: string
-  public component: string
-  public isClosed:boolean
-  private nativeElement : Node
+  constructor() {}
 
-  constructor(public renderer : Renderer, public element : ElementRef) { this.nativeElement = element.nativeElement }
+  ngAfterContentInit() { }
 
-  ngAfterContentInit() {
-     this.alert.nativeElement.focus();
-   }
+  ngOnInit() { }
 
-  ngOnInit() { console.log(this.nativeElement)}
+  close(event){ this.show = false}
 
-  create(alertSettings:any):void{
-    this.alertType = alertSettings.alertType
-    this.message = alertSettings.message
-    this.component = alertSettings.component
-    let appNotify = this.renderer.createElement(this.nativeElement , "alert");
-    let place = document.querySelector(this.component)
-    place.appendChild(this.nativeElement)
-  }
-
-  close(event:any){
-    let alert = document.querySelector("#alert")
-    alert.remove();
-    this.isClosed = true
+  closeAlert(){
+    setTimeout(()=>{
+      document.getElementById('alert').hidden = true
+    } , 2500)
   }
 
 }

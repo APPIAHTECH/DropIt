@@ -8,7 +8,6 @@ import { User } from './../../../model/User.model'
 export class SettingsComponent implements OnInit {
 
   tab:number
-  isPrenim:boolean = false
   constructor(public user:User) {
     this.tab = 1
     let model = JSON.parse(localStorage.getItem('user'))

@@ -1,4 +1,5 @@
-<div id="alert" class="info" #alert>
+<div id="alert" [class]="alertType" *ngIf="show">
   <span class="closebtn" (click)="close($event)">&times;</span>
   <strong>{{alertType}}!</strong> {{message}}
 </div>
+<span *ngIf="autoClose">{{closeAlert()}}</span>

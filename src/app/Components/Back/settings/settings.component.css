@@ -9,6 +9,9 @@ section#settings{
   padding: 50px;
 }
 
+#aling{
+  margin-left: 25px;
+}
 div#left-handSide , div#right-handSide{
   width: 80%;
   height: 100%;

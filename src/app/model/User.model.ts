@@ -25,6 +25,8 @@ export class User{
   private userAuthUrlResetPassword:string = AppComponent.HOST + 'api/auth/resetPassword'
   private userAuthUrlResetNewPassword:string = AppComponent.HOST + 'api/auth/resetPassword/newPassword'
   private userDataUrl:string = AppComponent.HOST + 'api/user/data'
+  private userUpdateUrl:string = AppComponent.HOST + 'api/user/update'
+  private userGetBy:string = AppComponent.HOST + 'api/user/get/by'
 
   constructor(private request:DataRequestService){
     this.setProfileImg("http://www.creativehdwallpapers.com/uploads/large/abstract-wallpaper/abstract-wallpaper-purple.jpg");
@@ -95,6 +97,23 @@ export class User{
       }, error =>{console.error(error)});
   }
 
+  public getUserByID(id:string , callback){
+
+    this.request.get(this.userGetBy+"/"+id , true)
+      .subscribe(response =>{
+        callback(response.userData)
+      }, error =>{console.error(error)});
+  }
+
+  public updateUser(user:this , callback):void{
+
+    this.request.postContent(user.userUpdateUrl , user , true)
+      .subscribe(
+        response => callback(response),
+        error => callback(error)
+      );
+  }
+
   public setModel(model):void{
     this.setUserID(model.publicID)
     this.setUsername(model.username)
@@ -105,6 +124,7 @@ export class User{
     this.setFollowing(model.following)
     this.setNotificationConfig(model.notificationConfig)
     this.setAccountInfo(model.accountInfo)
+    this.setAccesToken(localStorage.getItem('tokenAcces').toString())
   }
 
 }

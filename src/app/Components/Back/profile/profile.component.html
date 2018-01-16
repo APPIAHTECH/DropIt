@@ -1,93 +1,197 @@
+<app-notification [alertType]="alertObject.alertType" [show]="alertObject.show" [message]="alertObject.message" [autoClose]="alertObject.autoClose"></app-notification>
 <app-navigation></app-navigation>
+<div *ngIf="founded == 1">
+    <section id="myProfile">
+      <div id="bg" [ngStyle]="{'background': '#fff url(' + user.getProfileImg() + ') no-repeat 0 0'}"></div>
+      <div id="suscript">
 
-  <section id="myProfile">
-    <div id="bg" [ngStyle]="{'background': '#fff url(' + user.getProfileImg() + ') no-repeat 0 0'}"></div>
-    <div id="suscript">
+        <div id="circleProfileBig" [ngStyle]="{'background': '#fff url(' + user.getProfileImg() + ') no-repeat 0 0'}">
+          <div id="ChangeImage" *ngIf="asSession">
+            <label for="file" id="chose"><i class="fa fa-camera" aria-hidden="true"></i></label>
+            <input type="file" name="file" id="file" class="inputfile" (change)="fileValid($event)"/>
+          </div>
 
-      <div id="circleProfileBig" [ngStyle]="{'background': '#fff url(' + user.getProfileImg() + ') no-repeat 0 0'}">
-        <div id="ChangeImage">
-          <i class="fa fa-camera" aria-hidden="true"></i>
-        </div>
-
-        <div id="info">
-          <h4>{{user.getUsername()}}</h4>
-          <p id="projects">10254 projects <i class="fa fa-plus" aria-hidden="true"></i></p>
+          <div id="info">
+            <h4>{{user.getUsername()}}</h4>
+            <p id="projects">10254 projects <i class="fa fa-plus" aria-hidden="true"></i></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="select">
-      <ul id="options">
-        <li [ngClass]="{'active': isSelected(1)}" (click)="selectTab(1)" class="li"><a>Projects</a></li>
-        <li [ngClass]="{'active': isSelected(2)}" (click)="selectTab(2)" class="li"><a>Analitics</a></li>
-      </ul>
+      <div id="select">
+        <ul id="options">
+          <li [ngClass]="{'active': isSelected(1)}" (click)="selectTab(1)" class="li"><a>Projects</a></li>
+          <li [ngClass]="{'active': isSelected(2)}" (click)="selectTab(2)" class="li"><a>Analitics</a></li>
+        </ul>
 
 
-      <div *ngIf="isSelected(1)" class="pro">
+        <div *ngIf="isSelected(1)" class="pro">
 
-        <div id="subNav">
-          <div class="dropdown">
-            <button class="dropbtn">Category <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
-            <div class="dropdown-content">
-              <a href="#">Hip Hop</a>
-              <a href="#">Trap</a>
-              <a href="#">Rap</a>
+          <div id="subNav">
+            <div class="dropdown">
+              <button class="dropbtn">Category <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+              <div class="dropdown-content">
+                <a href="#">Hip Hop</a>
+                <a href="#">Trap</a>
+                <a href="#">Rap</a>
+              </div>
             </div>
+
+            <div class="dropdown">
+              <button class="dropbtn">Sort by <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+              <div class="dropdown-content">
+                <a href="#">Recent</a>
+                <a href="#">Most view</a>
+                <a href="#">Most Liked</a>
+                <a href="#">Most Commented</a>
+              </div>
+            </div>
+
           </div>
 
-          <div class="dropdown">
-            <button class="dropbtn">Sort by <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
-            <div class="dropdown-content">
-              <a href="#">Recent</a>
-              <a href="#">Most view</a>
-              <a href="#">Most Liked</a>
-              <a href="#">Most Commented</a>
-            </div>
-          </div>
+            <section id="dash">
+              <div class="monsterCard" *ngFor="let cardItem of cards">
+                <div class="monster card">
+                  <div class="wrapper">
+                    <div class="header">
+                      <div class="date" id="date">
 
-        </div>
-
-          <section id="dash">
-            <div class="monsterCard" *ngFor="let cardItem of cards">
-              <div class="monster card">
-                <div class="wrapper">
-                  <div class="header">
-                    <div class="date" id="date">
-
-                      <div id="minicircle"></div>
-                      <span class="author">Monstercat  </span>
+                        <div id="minicircle"></div>
+                        <span class="author">Monstercat  </span>
+                      </div>
+                      <ul class="menu-content">
+                        <li>
+                          <a class="fa fa-cloud-download"><span>150</span></a>
+                        </li>
+                        <li><a class="fa fa-heart-o"><span>18</span></a></li>
+                        <li><a class="fa fa-comment-o"><span>3</span></a></li>
+                        <li><a class="fa fa-headphones"><span>GH</span></a></li>
+                      </ul>
                     </div>
-                    <ul class="menu-content">
-                      <li>
-                        <a class="fa fa-cloud-download"><span>150</span></a>
-                      </li>
-                      <li><a class="fa fa-heart-o"><span>18</span></a></li>
-                      <li><a class="fa fa-comment-o"><span>3</span></a></li>
-                      <li><a class="fa fa-headphones"><span>GH</span></a></li>
-                    </ul>
-                  </div>
-                  <div class="data">
-                    <div class="content">
+                    <div class="data">
+                      <div class="content">
 
-                      <h1 class="title"><a href="#">Against The Sun</a></h1>
-                      <p class="text">This a monstercat track flp build with fl studio , hope you enjoy it . :D</p>
-                      <a class="button btn-download">Download</a>
-                      <a class="button" href="project/edit/10">Edit</a>
-                      <a class="button btn-delete" (click)="delete()">Delete</a>
+                        <h1 class="title"><a href="#">Against The Sun</a></h1>
+                        <p class="text">This a monstercat track flp build with fl studio , hope you enjoy it . :D</p>
+                        <a class="button btn-download">Download</a>
+                        <a class="button" href="project/edit/10">Edit</a>
+                        <a class="button btn-delete" (click)="delete()">Delete</a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+            </section>
+
+        </div>
+        <div *ngIf="isSelected(2)">
+          <section id="dash">
+            {{tab}} Analitics stuff!!
+          </section>
+        </div>
+
+      </div>
+    </section>
+</div>
+
+<div *ngIf="founded == 2">
+    <section id="myProfile">
+      <div id="bg" [ngStyle]="{'background': '#fff url(' + userFounded.profileImg + ') no-repeat 0 0'}"></div>
+      <div id="suscript">
+
+        <div id="circleProfileBig" [ngStyle]="{'background': '#fff url(' + userFounded.profileImg + ') no-repeat 0 0'}">
+          <div id="ChangeImage" *ngIf="asSession">
+            <label for="file" id="chose"><i class="fa fa-camera" aria-hidden="true"></i></label>
+            <input type="file" name="file" id="file" class="inputfile" (change)="fileValid($event)"/>
+          </div>
+
+          <div id="info">
+            <h4>{{userFounded.username}}</h4>
+            <p id="projects">20254 projects <i class="fa fa-plus" aria-hidden="true"></i></p>
+          </div>
+        </div>
+      </div>
+      <div id="select">
+        <ul id="options">
+          <li [ngClass]="{'active': isSelected(1)}" (click)="selectTab(1)" class="li"><a>Projects</a></li>
+          <li [ngClass]="{'active': isSelected(2)}" (click)="selectTab(2)" class="li"><a>Analitics</a></li>
+        </ul>
+
+
+        <div *ngIf="isSelected(1)" class="pro">
+
+          <div id="subNav">
+            <div class="dropdown">
+              <button class="dropbtn">Category <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+              <div class="dropdown-content">
+                <a href="#">Hip Hop</a>
+                <a href="#">Trap</a>
+                <a href="#">Rap</a>
+              </div>
             </div>
 
+            <div class="dropdown">
+              <button class="dropbtn">Sort by <i class="fa fa-sort-desc" aria-hidden="true"></i></button>
+              <div class="dropdown-content">
+                <a href="#">Recent</a>
+                <a href="#">Most view</a>
+                <a href="#">Most Liked</a>
+                <a href="#">Most Commented</a>
+              </div>
+            </div>
+
+          </div>
+
+            <section id="dash">
+              <div class="monsterCard" *ngFor="let cardItem of cards">
+                <div class="monster card">
+                  <div class="wrapper">
+                    <div class="header">
+                      <div class="date" id="date">
+
+                        <div id="minicircle"></div>
+                        <span class="author">Monstercat  </span>
+                      </div>
+                      <ul class="menu-content">
+                        <li>
+                          <a class="fa fa-cloud-download"><span>150</span></a>
+                        </li>
+                        <li><a class="fa fa-heart-o"><span>18</span></a></li>
+                        <li><a class="fa fa-comment-o"><span>3</span></a></li>
+                        <li><a class="fa fa-headphones"><span>GH</span></a></li>
+                      </ul>
+                    </div>
+                    <div class="data">
+                      <div class="content">
+
+                        <h1 class="title"><a href="#">Against The Sun</a></h1>
+                        <p class="text">This a monstercat track flp build with fl studio , hope you enjoy it . :D</p>
+                        <a class="button btn-download">Download</a>
+                        <a class="button" href="project/edit/10">Edit</a>
+                        <a class="button btn-delete" (click)="delete()">Delete</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+        </div>
+        <div *ngIf="isSelected(2)">
+          <section id="dash">
+            {{tab}} Analitics stuff!!
           </section>
+        </div>
 
       </div>
-      <div *ngIf="isSelected(2)">
-        <section id="dash">
-          {{tab}} Analitics stuff!!
-        </section>
-      </div>
+    </section>
+</div>
 
-    </div>
+<div *ngIf="founded == 0">
+  <section id="notfound">
+    <h2 id="h2"> Unlucky , Can't find profile :( </h2>
   </section>
+</div>
+
 <app-footer></app-footer>

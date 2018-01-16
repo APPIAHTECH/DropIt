@@ -1,7 +1,7 @@
 <nav id="navbar" [ngClass]="{'scrolling': scrolling}">
   <div id="left-side">
     <ul>
-      <li><a href="/dashboard"><h1 id="recursive">Plus Ultra</h1></a></li>
+      <li><a href="/dashboard"><h1 id="recursive">{{title}}</h1></a></li>
     </ul>
   </div>
 
@@ -24,7 +24,7 @@
           <i class="fa fa-angle-down" aria-hidden="true" id="downarrow"></i>
         </div>
         <div class="dropdown-content">
-          <a href="user/my/profile">Profile</a>
+          <a [href]="profileUrl">Profile</a>
           <a href="/settings">Settings</a>
           <a (click)="exit()" id="exit">Exit</a>
         </div>
