@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '../../../model/Projects.model'
 
 @Component({
   selector: 'app-upload',
@@ -63,7 +64,7 @@ export class UploadComponent implements OnInit {
   isValid(){
     this.validInfo = true
   }
-  
+
   getData(){}
 
   upload(){

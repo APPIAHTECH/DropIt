@@ -26,24 +26,26 @@
               <h3>Type</h3>
             </div>
             <div class="opt-right">
+
               <label class="container"> Prenium
-                <input type="radio" name="checkbox">
+                <input type="radio" name="Prenium" value="Prenium">
                 <span class="checkmark"></span>
               </label>
 
               <label class="container"> Free
-                <input type="radio" checked="true" name="checkbox">
+                <input type="radio" name="isFree">
                 <span class="checkmark"></span>
               </label>
             </div>
           </div>
+          <!-- -->
 
           <div class="sec">
             <div class="opt-left">
               <h3>Space</h3>
             </div>
             <div class="opt-right">
-              <h3 id="aling">{{user.getAccountInfo().totalSpace}}MB</h3>
+              <app-chart [options]="options" [values]="values"></app-chart>
             </div>
           </div>
 
@@ -62,7 +64,7 @@
               <h3>Username</h3>
             </div>
             <div class="opt-right">
-              <h4>{{user.getUsername()}}</h4>
+              <h4><input type="text" [value]="user.getUsername()"/></h4>
             </div>
           </div>
 
@@ -86,23 +88,11 @@
 
           <div class="sec">
             <div class="opt-left">
-              <h3>Following</h3>
+              <h3>Social Network</h3>
             </div>
             <div class="opt-right">
-              <h4>{{user.getFollowing()}}</h4>
             </div>
           </div>
-
-          <div class="sec">
-            <div class="opt-left">
-              <h3>Followers</h3>
-            </div>
-            <div class="opt-right">
-              <h4>{{user.getFollowers()}}</h4>
-            </div>
-          </div>
-
-
         </div>
 
         <div  *ngIf="isSelected(3)">
@@ -156,7 +146,7 @@
         </div>
       <div id="down">
         <button type="button" name="button" id="cancelSettings">Cancel</button>
-        <button type="button" name="button" id="saveSettings">Save settings</button>
+        <button type="button" name="button" id="saveSettings" (click)="save()">Save settings</button>
       </div>
     </div>
 

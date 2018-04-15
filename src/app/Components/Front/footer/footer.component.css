@@ -3,6 +3,7 @@ footer{
   height: 100px;
   box-sizing: border-box;
   background: #FFFFFF;
+  border-top: 5px solid #F44336;
   /* position: absolute;
   top: 100%;
   bottom: 0; */

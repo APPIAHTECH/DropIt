@@ -6,6 +6,10 @@ let url = require('url');
 let nodemailer = require('nodemailer');
 let env = require('./../../.env');
 let crypto = require('crypto'), algorithm = 'aes-256-ctr', password = 'd6F3Efeq';
+let fs = require('fs');
+let getSize = require('get-folder-size');
+
+const pathFolders = path.resolve(__dirname + "./../usersDir")
 
 class Service {
   constructor() {}
@@ -119,7 +123,6 @@ class Service {
     return dec;
   }
 
-
   static isValidEmail(email){
 
     if(email === undefined || email == " " || email == "")
@@ -147,6 +150,27 @@ class Service {
     if(str === undefined)
       return true;
     return !str.replace(/\s/g, '').length
+  }
+
+  static createFolder(email){
+    if(email){
+      let dir = pathFolders + "/"+email;
+      if (!fs.existsSync(dir)){
+          fs.mkdirSync(dir);
+          return true
+      }else {
+        return false
+      }
+    }else {
+      return false
+    }
+  }
+
+  static getFolderSize(folder){
+    getSize(folder, (err, size) =>{
+      if (err) { throw err; }
+      return size
+    });
   }
 
 }

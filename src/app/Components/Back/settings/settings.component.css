@@ -155,6 +155,7 @@ div.opt-left{
   width: 50%;
 }
 
+
 button#cancelSettings , button#saveSettings{
   display: inline-block;
   color: #fff;
@@ -189,3 +190,11 @@ div#down{
 
 
 .opt-right h4{font-weight: normal;}
+/*TODO: deside how should input be maneged css!!!!!*/
+div h4 input{
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  background-color: #E9E9E9;
+  opacity: .8;
+}

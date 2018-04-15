@@ -8,7 +8,8 @@ let http = require('http');
 
 const collectionName = "userCollection"
 const SERVERFULLPATH = "http://localhost:3500/"
-
+const maxFolderSizeFree = "1GB"
+const maxFolderSizePrenium = "50GB"
 module.exports = class User {
 
   constructor(user) {
@@ -25,33 +26,45 @@ module.exports = class User {
     this.followers = []
     this.following = []
     this.accountInfo = {
-      totalSpace: "5",
-      avilableSpace: "5",
+      totalSpace: maxFolderSizeFree,
+      avilableSpace: maxFolderSizeFree,
       usedSpace: "0"
     }
     this.notificationConfig = {}
   }
 
   save(){
-    let confirmToken;
+
+    let confirmToken
     service.hasPassword(this.password , 10 ,(err , hashedPassword)=>{
-      if(err) console.error(err);
+      if(err){
+        console.error(err)
+        return
+      }
       this.password = hashedPassword
       this.token = service.createToken(this)
       confirmToken = service.confirmToken(this.publicID)
-      let link = `${SERVERFULLPATH}api/auth/confirmation/${confirmToken}`
 
-      if(this.token){
-        this.createdAt = moment().unix()
-        this.updatedAt = moment().unix()
-        // db.insert(collectionName , this)
-        return service.sendMail(this.email , 'Dropit confirmation [Activate Account]', "<h1>Hello and welcome to Dropit. Please confirm your email <a href='"+link+"'>confirmation link </a>" , (error , info)=>{
-          if (error) return res.json({error:error , link:link});
-          db.insert(collectionName , this)
-          console.log('Message %s sent: %s', info.messageId, info.response);
-          return;
-        });
+      if(service.createFolder(this.email)){
+        let link = `${SERVERFULLPATH}api/auth/confirmation/${confirmToken}`
+
+        if(this.token){
+          this.createdAt = moment().unix()
+          this.updatedAt = moment().unix()
+          // db.insert(collectionName , this)
+          return service.sendMail(this.email , 'Dropit confirmation [Activate Account]', "<h1>Hello and welcome to Dropit. Please confirm your email <a href='"+link+"'>confirmation link </a>" , (error , info)=>{
+            if (error){
+             console.error(error)
+             return
+          }
+            db.insert(collectionName , this)
+            console.log('Message %s sent: %s', info.messageId, info.response);
+            return;
+          });
+        }
       }
+
+      return
 
     });
   }

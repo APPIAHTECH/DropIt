@@ -9,6 +9,7 @@ import { DataRequestService } from './global/data-reuqest.service';
 import { HelperService } from './global/Helper.service'
 import { User } from './model/User.model'
 import { Project } from './model/Projects.model'
+import { ChartsModule } from 'ng2-charts';
 
 
 import { AppComponent } from './Components/app.component';
@@ -27,6 +28,7 @@ import { UploadComponent } from './Components/Back/upload/upload.component';
 import { NotificationComponent } from './Components/Back/notification/notification.component';
 import { SettingsComponent } from './Components/Back/settings/settings.component';
 import { EditComponent } from './Components/Back/edit/edit.component';
+import { ChartComponent } from './Components/Back/chart/chart.component';
 
 const appRoutes: Routes = [
   { path: '', component: FrontComponent },
@@ -60,7 +62,8 @@ const appRoutes: Routes = [
     UploadComponent,
     NotificationComponent,
     SettingsComponent,
-    EditComponent
+    EditComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     JsonpModule,
+    ChartsModule
   ],
   providers: [DataRequestService , User , Project , HelperService , NotificationComponent],
   bootstrap: [AppComponent]
